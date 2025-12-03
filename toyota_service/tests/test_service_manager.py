@@ -153,6 +153,17 @@ class TestServiceManager(unittest.TestCase):
         self.assertEqual(len(results), 1)
         self.assertEqual(results[0].owner_name, "Ana Lopez")
 
+    def test_search_vehicles_with_empty_owner(self):
+        """Test searching vehicles when owner_name is empty."""
+        self.manager.register_vehicle(
+            model="Tacoma", year=2022, license_plate="CCC-333"
+            # owner_name is empty by default
+        )
+        # Should not raise an error when searching
+        results = self.manager.search_vehicles("Tacoma")
+        self.assertEqual(len(results), 1)
+        self.assertEqual(results[0].model, "Tacoma")
+
     def test_get_statistics(self):
         """Test getting service statistics."""
         vehicle = self.manager.register_vehicle(

@@ -128,9 +128,11 @@ class ServiceManager:
         query_lower = query.lower()
         results = []
         for vehicle in self._vehicles.values():
-            if (query_lower in vehicle.model.lower() or
-                query_lower in vehicle.owner_name.lower() or
-                query_lower in vehicle.license_plate.lower()):
+            model_match = query_lower in vehicle.model.lower()
+            owner_match = (vehicle.owner_name and 
+                          query_lower in vehicle.owner_name.lower())
+            plate_match = query_lower in vehicle.license_plate.lower()
+            if model_match or owner_match or plate_match:
                 results.append(vehicle)
         return results
 

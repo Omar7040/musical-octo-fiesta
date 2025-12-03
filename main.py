@@ -3,7 +3,7 @@
 Toyota Car Service Application - Main Entry Point
 
 Sistema de gestión de servicios para autos Toyota.
-Este aplicación permite registrar vehículos, programar servicios,
+Esta aplicación permite registrar vehículos, programar servicios,
 y administrar el historial de mantenimiento de autos Toyota.
 """
 
