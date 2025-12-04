@@ -48,6 +48,14 @@ class ServiceManager:
                 return vehicle
         return None
 
+    def get_vehicle_by_vin(self, vin: str) -> Optional[Vehicle]:
+        """Get a vehicle by its VIN number."""
+        vin_upper = vin.upper().strip()
+        for vehicle in self._vehicles.values():
+            if vehicle.vin and vehicle.vin.upper() == vin_upper:
+                return vehicle
+        return None
+
     def get_all_vehicles(self) -> List[Vehicle]:
         """Get all registered vehicles."""
         return list(self._vehicles.values())
