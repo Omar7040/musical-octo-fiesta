@@ -1,0 +1,10 @@
+# Toyota Car Service Application Requirements
+
+# Core dependencies (none required - uses Python standard library)
+
+# Optional dependencies for camera VIN scanning:
+# pip install opencv-python pyzbar
+# On Linux also install: sudo apt-get install libzbar0
+
+# opencv-python>=4.5.0  # For camera capture and image processing
+# pyzbar>=0.1.9         # For barcode decoding
